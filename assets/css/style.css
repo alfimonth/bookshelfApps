@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+	background-color: #eee;
+}
+h1 {
+	margin: 0;
+	font-size: 32px;
+	color: #e8e8e8;
+}
+h2 {
+	text-align: center;
+	margin: 0;
+	font-size: 16px;
+}
+h2 img,
+button img {
+	transform: translateY(2px);
+}
+h3 {
+	color: #00334e;
+	margin: 0 0 8px;
+	font-size: 20px;
+}
+h4 {
+	color: #145374;
+	margin: 0 0 6px;
+	font-size: 16px;
+}
+p {
+	margin: 0;
+	font-size: 14px;
+}
+button {
+	border: none;
+	margin: 0;
+	padding: 5px;
+	width: auto;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #5588a3;
+	font-family: "Roboto", sans-serif;
+	color: #e8e8e8;
+	box-shadow: -2px 2px 2px black;
+}
+button:hover {
+	background-color: #145374;
+}
+input[type="text"],
+input[type="number"] {
+	all: unset;
+	padding: 4px;
+	height: 100%;
+	background-color: #fff;
+	border: 1px solid black;
+	box-shadow: -2px 2px 2px black;
+	width: calc(100% - 12px);
+}
+input[type="checkbox"] {
+	background-color: black;
+	box-shadow: -2px 2px 2px black;
+	cursor: pointer;
+}
+label {
+	cursor: pointer;
+}
+#searchBook {
+	display: flex;
+	gap: 3px;
+}
+header {
+	padding: 20px 40px;
+	background-color: #00334e;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+header div {
+	vertical-align: middle;
+}
+.filter {
+	width: fit-content;
+}
+.menu {
+	display: flex;
+	gap: 5px;
+	flex-wrap: wrap;
+}
+main {
+	min-height: calc(100vh - 200px);
+	padding: 30px 40px;
+}
+main > p {
+	margin-bottom: 20px;
+	font-size: 16px;
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+main > p > button {
+	margin-left: 5px;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+}
+main .info-box {
+	color: #e8e8e8;
+	width: fit-content;
+	padding: 2px 5px;
+	margin: -12px auto 10px;
+	background-color: #5588a3;
+	box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+.rakContainer {
+	flex-wrap: wrap;
+	display: flex;
+	gap: 20px;
+}
+.rakContainer section {
+	box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.4);
+	flex: 1 1 0;
+	min-width: 500px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background-color: #e8e8e8;
+	gap: 10px;
+	padding: 10px;
+}
+.rakContainer section .bookList {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.rakContainer section article {
+	border: 2px solid #00334e;
+	padding: 10px;
+	position: relative;
+}
+article .action {
+	position: absolute;
+	height: 100%;
+	right: 10px;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+article .action button {
+	height: fit-content;
+}
+.inputContainer,
+.editContainer {
+	z-index: 2;
+	display: none;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.7);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.inputContainer.active,
+.editContainer.active {
+	display: block;
+}
+.inputBox,
+.editBox {
+	position: relative;
+	max-width: 400px;
+	margin: 120px auto;
+	background-color: #e8e8e8;
+	padding: 12px;
+	display: block;
+	animation: scaleUp 0.5s;
+	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.inputBox button[type="submit"],
+.editBox button[type="submit"] {
+	margin: 24px auto 10px;
+}
+.inputBox .x,
+.x2 {
+	position: absolute;
+	right: 10px;
+	top: -10px;
+}
+#inputBook,
+#editBook {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+#inputBook div,
+#editBook div {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+footer {
+	padding: 10px 40px;
+}
+@media screen and (max-width: 600px) {
+	.rakContainer section {
+		min-width: 300px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.rakContainer section {
+		min-width: 200px;
+	}
+	article .action {
+		position: static;
+		top: 0;
+		height: unset;
+		justify-content: flex-start;
+		margin-top: 10px;
+	}
+}
+@keyframes scaleUp {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

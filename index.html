@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bookshelf Apps</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Bookshelf Apps</h1>
+            <div class="filter">
+                <form id="searchBook">
+                    <input id="searchBookTitle" type="text">
+                    <button id="searchSubmit" type="submit" title="cari buku"><img src="assets/img/search.svg"
+                            alt="Cari" title="cari buku"></button>
+                </form>
+            </div>
+            <div class="menu">
+                <button class="addButton"><img src="assets/img/journal-plus.svg" alt=""> Tambah Buku</button>
+                <button id="clearAllBook"><img src="assets/img/trash-white.svg" alt=""> Kosongkan Buku</button>
+            </div>
+        </header>
+        <main>
+            <div class="inputContainer">
+                <div class="inputBox">
+                    <h2>Masukkan Buku Baru</h2>
+                    <button class="x"><img src="assets/img/x.svg" alt="x"></button>
+                    <form id="inputBook" name="inputBook">
+                        <div class="input">
+                            <label for="inputBookTitle">Judul</label>
+                            <input id="inputBookTitle" type="text" required>
+                        </div>
+                        <div class="input">
+                            <label for="inputBookAuthor">Penulis</label>
+                            <input id="inputBookAuthor" type="text" required>
+                        </div>
+                        <div class="input">
+                            <label for="inputBookYear">Tahun</label>
+                            <input id="inputBookYear" type="number" min="1" required>
+                        </div>
+                        <span class="input_inline">
+                            <input id="inputBookIsComplete" type="checkbox">
+                            <label for="inputBookIsComplete">Selesai dibaca</label>
+                        </span>
+                        <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai
+                                dibaca</span></button>
+                    </form>
+                </div>
+            </div>
+            <div class="info-box hidden"></div>
+            <p class="hidden">menampilkan hasil pencarian untuk '<span></span>' <button title="berhenti mencari"><img
+                        src="assets/img/x.svg" alt="x"></button></p>
+            <div class="rakContainer">
+                <section>
+                    <h2><img src="assets/img/book.svg" alt=""> Belum selesai dibaca</h2>
+                    <div id="incompleteBookshelfList" class="bookList">
+                    </div>
+                </section>
+                <section>
+                    <h2><img src="assets/img/journal-check.svg" alt=""> Selesai dibaca</h2>
+                    <div id="completeBookshelfList" class="bookList">
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <h3>Bookshelf &copy; 2023</h3>
+        </footer>
+        <div class="editContainer">
+            <div class="editBox">
+                <h2>Edit Buku</h2>
+                <button class="x2"><img src="assets/img/x.svg" alt="x"></button>
+                <form id="editBook" name="editBook">
+                    <input type="hidden" id="idBook">
+                    <div class="input">
+                        <label for="editBookTitle">Judul</label>
+                        <input id="editBookTitle" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="editBookAuthor">Penulis</label>
+                        <input id="editBookAuthor" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="editBookYear">Tahun</label>
+                        <input id="editBookYear" type="number" min="1" required>
+                    </div>
+                    <button id="editSubmit" type="submit">Konfirmasi</button>
+                </form>
+            </div>
+        </div>
+        <script src="assets/js/script.js"></script>
+    </body>
+
+</html>
